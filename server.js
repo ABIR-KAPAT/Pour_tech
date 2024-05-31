@@ -46,7 +46,7 @@ app.use('/upload',express.static(path.join(__dirname, 'upload')))
 
 
 const router = require('./router/adminRoute')
-app.use('/admin',router)
+app.use('/',router)
 
 const apiRoute = require('./router/apiRoute')
 app.use('/api',apiRoute)
