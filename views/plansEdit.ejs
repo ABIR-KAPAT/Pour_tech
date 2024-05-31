@@ -1,0 +1,196 @@
+<%- include ('common/head')-%> <%- include ('common/sidebar')-%>
+    <!-- ======== main-wrapper start =========== -->
+    <main class="main-wrapper">
+      <%- include ('common/navbar')-%>
+
+        <!-- ========== tab components start ========== -->
+        <section class="tab-components">
+          <div class="container-fluid">
+            <!-- ========== title-wrapper start ========== -->
+            <div class="title-wrapper pt-30">
+              <div class="row align-items-center">
+                <div class="col-md-6">
+                  <div class="title">
+                    <h2>Plans Edit</h2>
+                  </div>
+                </div>
+                <!-- end col -->
+                <!-- <div class="col-md-6">
+            <div class="breadcrumb-wrapper">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item">
+                    <a href="#0">Dashboard</a>
+                  </li>
+                  <li class="breadcrumb-item"><a href="#0">Forms</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                    Form Elements
+                  </li>
+                </ol>
+              </nav>
+            </div>
+          </div> -->
+                <!-- end col -->
+              </div>
+              <!-- end row -->
+            </div>
+            <!-- ========== title-wrapper end ========== -->
+
+            <!-- ========== form-elements-wrapper start ========== -->
+            <div class="form-elements-wrapper">
+              <div class="row">
+                <div class="col-lg-6">
+                  <!-- input style start -->
+
+                  <!-- input style start -->
+                  <div class="card-style mb-30">
+                    <h6 class="mb-25">Input Fields</h6>
+                    <form action="/admin/plan-update" method="post">
+                      <input type="hidden" name="planId" value="<%=planED._id%>">
+
+                      <div class="input-style-3">
+                        <input type="text" name="serviceplanname" placeholder="Service Plan Title" required
+                          value="<%=planED.serviceplanname%>" />
+                        <span class="icon"><i class="lni lni-text-format"></i></span>
+                      </div>
+
+                      <div class="input-style-3">
+                        <input type="text" name="bplanname" value="Basic Plan" placeholder="Basic Plan Name" required
+                          value="<%=planED.bplanname%>" />
+                        <span class="icon"><i class="lni lni-text-format"></i></span>
+                      </div>
+
+                      <div class="input-style-3">
+                        <textarea name="bdescription" placeholder="Basic Plan Description" rows="5" required
+                          value="<%=planED.b
+                          description%>"></textarea>
+                        <span class="icon"><i class="lni lni-text-format"></i></span>
+                      </div>
+
+                      <div class="input-style-3">
+                        <input type="text" name="bplan1" placeholder="Basic Plan 1" required
+                          value="<%=planED.bplan1%>" />
+                        <span class="icon"><i class="lni lni-text-format"></i></span>
+                      </div>
+
+                      <div class="input-style-3">
+                        <input type="text" name="bplan2" placeholder="Basic Plan 2" required
+                          value="<%=planED.bplan2%>" />
+                        <span class="icon"><i class="lni lni-text-format"></i></span>
+                      </div>
+
+                      <div class="input-style-3">
+                        <input type="text" name="bplan3" placeholder="Basic Plan 3" required
+                          value="<%=planED.bplan3%>" />
+                        <span class="icon"><i class="lni lni-text-format"></i></span>
+                      </div>
+
+                      <div class="input-style-3">
+                        <input type="text" name="bplan4" placeholder="Basic Plan 4" required
+                          value="<%=planED.bplan4%>" />
+                        <span class="icon"><i class="lni lni-text-format"></i></span>
+                      </div>
+
+                      <div class="input-style-3">
+                        <input type="text" name="splanname" value="Standard Plan" placeholder="Standard Plan Name"
+                          required value="<%=planED.splanname%>" />
+                        <span class="icon"><i class="lni lni-text-format"></i></span>
+                      </div>
+
+                      <div class="input-style-3">
+                        <textarea name="sdescription" placeholder="Standard Plan Description" rows="5" required
+                          value="<%=planED.sdescription%>"></textarea>
+                        <span class="icon"><i class="lni lni-text-format"></i></span>
+                      </div>
+
+                      <div class="input-style-3">
+                        <input type="text" name="splan1" placeholder="Standard Plan 1" required
+                          value="<%=planED.splan1%>" />
+                        <span class="icon"><i class="lni lni-text-format"></i></span>
+                      </div>
+
+                      <div class="input-style-3">
+                        <input type="text" name="splan2" placeholder="Standard Plan 2" required
+                          value="<%=planED.splan2%>" />
+                        <span class="icon"><i class="lni lni-text-format"></i></span>
+                      </div>
+
+                      <div class="input-style-3">
+                        <input type="text" name="splan3" placeholder="Standard Plan 3" required
+                          value="<%=planED.splan3%>" />
+                        <span class="icon"><i class="lni lni-text-format"></i></span>
+                      </div>
+
+                      <div class="input-style-3">
+                        <input type="text" name="splan4" placeholder="Standard Plan 4" required
+                          value="<%=planED.splan4%>" />
+                        <span class="icon"><i class="lni lni-text-format"></i></span>
+                      </div>
+
+                      <div class="input-style-3">
+                        <input type="text" name="aplanname" value="Advanced Plan" placeholder="Advanced Plan Name"
+                          required value="<%=planED.aplanname%>" />
+                        <span class="icon"><i class="lni lni-text-format"></i></span>
+                      </div>
+
+                      <div class="input-style-3">
+                        <textarea name="adescription" placeholder="Advanced Plan Description" rows="5" required
+                          value="<%=planED.adescription%>"></textarea>
+                        <span class="icon"><i class="lni lni-text-format"></i></span>
+                      </div>
+
+                      <div class="input-style-3">
+                        <input type="text" name="aplan1" placeholder="Advanced Plan 1" required
+                          value="<%=planED.aplan1%>" />
+                        <span class="icon"><i class="lni lni-text-format"></i></span>
+                      </div>
+
+                      <div class="input-style-3">
+                        <input type="text" name="aplan2" placeholder="Advanced Plan 2" required
+                          value="<%=planED.aplan2%>" />
+                        <span class="icon"><i class="lni lni-text-format"></i></span>
+                      </div>
+
+                      <div class="input-style-3">
+                        <input type="text" name="aplan3" placeholder="Advanced Plan 3" required
+                          value="<%=planED.aplan3%>" />
+                        <span class="icon"><i class="lni lni-text-format"></i></span>
+                      </div>
+
+                      <div class="input-style-3">
+                        <input type="text" name="aplan4" placeholder="Advanced Plan 4" required
+                          value="<%=planED.aplan4%>" />
+                        <span class="icon"><i class="lni lni-text-format"></i></span>
+                      </div>
+
+                      <input class="main-btn active-btn rounded-full btn-hover" value="Submit" type="submit" />
+                    </form>
+                  </div>
+                  <!-- end card -->
+                  <!-- ======= input style end ======= -->
+                </div>
+                <!-- end col -->
+
+                <!-- end col -->
+              </div>
+              <!-- end row -->
+            </div>
+            <!-- end card -->
+            <!-- ======= input style end ======= -->
+          </div>
+          <!-- end col -->
+
+          <!-- end col -->
+          </div>
+          <!-- end row -->
+          </div>
+
+          <!-- ========== form-elements-wrapper end ========== -->
+          </div>
+          <!-- end container -->
+        </section>
+        <!-- ========== tab components end ========== -->
+        <%- include ('common/footer')-%>
+    </main>
+    <!-- ======== main-wrapper end =========== -->
+    <%- include ('common/foot')-%>

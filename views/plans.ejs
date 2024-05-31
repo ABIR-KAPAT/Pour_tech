@@ -1,0 +1,215 @@
+<%- include ('common/head')-%> <%- include ('common/sidebar')-%>
+    <!-- ======== main-wrapper start =========== -->
+    <main class="main-wrapper">
+      <%- include ('common/navbar')-%>
+
+        <!-- ========== tab components start ========== -->
+        <section class="tab-components">
+          <div class="container-fluid">
+            <!-- ========== title-wrapper start ========== -->
+            <div class="title-wrapper pt-30">
+              <div class="row align-items-center">
+                <div class="col-md-6">
+                  <div class="title">
+                    <h2>Plans Elements</h2>
+                  </div>
+                </div>
+                <!-- end col -->
+                <!-- <div class="col-md-6">
+            <div class="breadcrumb-wrapper">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item">
+                    <a href="#0">Dashboard</a>
+                  </li>
+                  <li class="breadcrumb-item"><a href="#0">Forms</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                    Form Elements
+                  </li>
+                </ol>
+              </nav>
+            </div>
+          </div> -->
+                <!-- end col -->
+              </div>
+              <!-- end row -->
+            </div>
+            <!-- ========== title-wrapper end ========== -->
+
+            <!-- ========== form-elements-wrapper start ========== -->
+            <div class="form-elements-wrapper">
+              <div class="row">
+                <div class="col-lg-6">
+                  <!-- input style start -->
+                  <div class="card-style mb-30">
+                    <h6 class="mb-25">Input Fields</h6>
+                    <form action="/admin/addPlan" method="post">
+                      <label for="serviceId">Service</label>
+                      <select name="serviceId" id="serviceId" class="form-control" required>
+                        <option value="" disabled selected>Select Service</option>
+                        <% for(let data2 of serviceData){ %>
+                          <option value="<%= data2._id %>"><%= data2.title %></option>
+                        <% } %>
+                      </select>
+            
+                      <div class="input-style-3">
+                        <input type="text" name="serviceplanname" placeholder="Service Plan Title" required>
+                        <span class="icon"><i class="lni lni-text-format"></i></span>
+                      </div>
+            
+                      <div class="input-style-3">
+                        <input type="text" name="bplanname" value="Basic Plan" placeholder="Basic Plan Name" required>
+                        <span class="icon"><i class="lni lni-text-format"></i></span>
+                      </div>
+            
+                      <div class="input-style-3">
+                        <textarea name="bdescription" placeholder="Basic Plan Description" rows="5" required></textarea>
+                        <span class="icon"><i class="lni lni-text-format"></i></span>
+                      </div>
+            
+                      <div class="input-style-3">
+                        <input type="text" name="bplan1" placeholder="Basic Plan 1" required>
+                        <span class="icon"><i class="lni lni-text-format"></i></span>
+                      </div>
+            
+                      <div class="input-style-3">
+                        <input type="text" name="bplan2" placeholder="Basic Plan 2" required>
+                        <span class="icon"><i class="lni lni-text-format"></i></span>
+                      </div>
+            
+                      <div class="input-style-3">
+                        <input type="text" name="bplan3" placeholder="Basic Plan 3" required>
+                        <span class="icon"><i class="lni lni-text-format"></i></span>
+                      </div>
+            
+                      <div class="input-style-3">
+                        <input type="text" name="bplan4" placeholder="Basic Plan 4" required>
+                        <span class="icon"><i class="lni lni-text-format"></i></span>
+                      </div>
+            
+                      <div class="input-style-3">
+                        <input type="text" name="splanname" value="Standard Plan" placeholder="Standard Plan Name" required>
+                        <span class="icon"><i class="lni lni-text-format"></i></span>
+                      </div>
+            
+                      <div class="input-style-3">
+                        <textarea name="sdescription" placeholder="Standard Plan Description" rows="5" required></textarea>
+                        <span class="icon"><i class="lni lni-text-format"></i></span>
+                      </div>
+            
+                      <div class="input-style-3">
+                        <input type="text" name="splan1" placeholder="Standard Plan 1" required>
+                        <span class="icon"><i class="lni lni-text-format"></i></span>
+                      </div>
+            
+                      <div class="input-style-3">
+                        <input type="text" name="splan2" placeholder="Standard Plan 2" required>
+                        <span class="icon"><i class="lni lni-text-format"></i></span>
+                      </div>
+            
+                      <div class="input-style-3">
+                        <input type="text" name="splan3" placeholder="Standard Plan 3" required>
+                        <span class="icon"><i class="lni lni-text-format"></i></span>
+                      </div>
+            
+                      <div class="input-style-3">
+                        <input type="text" name="splan4" placeholder="Standard Plan 4" required>
+                        <span class="icon"><i class="lni lni-text-format"></i></span>
+                      </div>
+            
+                      <div class="input-style-3">
+                        <input type="text" name="aplanname" value="Advanced Plan" placeholder="Advanced Plan Name" required>
+                        <span class="icon"><i class="lni lni-text-format"></i></span>
+                      </div>
+            
+                      <div class="input-style-3">
+                        <textarea name="adescription" placeholder="Advanced Plan Description" rows="5" required></textarea>
+                        <span class="icon"><i class="lni lni-text-format"></i></span>
+                      </div>
+            
+                      <div class="input-style-3">
+                        <input type="text" name="aplan1" placeholder="Advanced Plan 1" required>
+                        <span class="icon"><i class="lni lni-text-format"></i></span>
+                      </div>
+            
+                      <div class="input-style-3">
+                        <input type="text" name="aplan2" placeholder="Advanced Plan 2" required>
+                        <span class="icon"><i class="lni lni-text-format"></i></span>
+                      </div>
+            
+                      <div class="input-style-3">
+                        <input type="text" name="aplan3" placeholder="Advanced Plan 3" required>
+                        <span class="icon"><i class="lni lni-text-format"></i></span>
+                      </div>
+            
+                      <div class="input-style-3">
+                        <input type="text" name="aplan4" placeholder="Advanced Plan 4" required>
+                        <span class="icon"><i class="lni lni-text-format"></i></span>
+                      </div>
+            
+                      <input class="main-btn active-btn rounded-full btn-hover" value="Submit" type="submit" />
+                    </form>
+                  </div>
+                  <!-- end card -->
+                  <!-- ======= input style end ======= -->
+                </div>
+                <!-- end col -->
+                <div class="col-lg-6">
+                  <!-- ======= input style start ======= -->
+                  <div class="card-style mb-30">
+                    <h6 class="mb-10">Data Table</h6>
+                    <div class="table-wrapper table-responsive">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th class="lead-title">
+                              <h6>Title</h6>
+                            </th>
+                            <th>
+                              <h6>Action</h6>
+                            </th>
+                          </tr>
+                          <!-- end table row-->
+                        </thead>
+                        <% if(planDetailsData.length > 0) { %>
+                        <tbody>
+                          <% for(let plan of planDetailsData) { %>
+                          <tr>
+                            <td class="min-width">
+                              <p><a href="#0"><%= plan.serviceplanname %></a></p>
+                            </td>
+                            
+                            <td class="min-width">
+                              <a href="/admin/plan-edit/<%=plan._id%>" class="status-btn success-btn">Edit</a>
+                            </td>
+                          </tr>
+                          <!-- end table row -->
+                          <% } %>
+                        </tbody>
+                        <% } else { %>
+                        <tbody>
+                          <tr>
+                            <td colspan="2">No Data Found</td>
+                          </tr>
+                        </tbody>
+                        <% } %>
+                      </table>
+                      <!-- end table -->
+                    </div>
+                  </div>
+                  <!-- ======= input style end ======= -->
+                </div>
+                <!-- end col -->
+              </div>
+              <!-- end row -->
+            </div>
+            
+            <!-- ========== form-elements-wrapper end ========== -->
+          </div>
+          <!-- end container -->
+        </section>
+        <!-- ========== tab components end ========== -->
+        <%- include ('common/footer')-%>
+    </main>
+    <!-- ======== main-wrapper end =========== -->
+    <%- include ('common/foot')-%>

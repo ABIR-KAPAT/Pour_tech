@@ -1,0 +1,109 @@
+<%- include ('common/head')-%> <%- include ('common/sidebar')-%>
+    <!-- ======== main-wrapper start =========== -->
+    <main class="main-wrapper">
+      <%- include ('common/navbar')-%>
+
+        <!-- ========== tab components start ========== -->
+        <section class="tab-components">
+          <div class="container-fluid">
+            <!-- ========== title-wrapper start ========== -->
+            <div class="title-wrapper pt-30">
+              <div class="row align-items-center">
+                <div class="col-md-6">
+                  <div class="title">
+                    <h2>Candidate Detials</h2>
+                  </div>
+                </div>
+                <!-- end col -->
+                <!-- <div class="col-md-6">
+            <div class="breadcrumb-wrapper">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item">
+                    <a href="#0">Dashboard</a>
+                  </li>
+                  <li class="breadcrumb-item"><a href="#0">Forms</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                    Form Elements
+                  </li>
+                </ol>
+              </nav>
+            </div>
+          </div> -->
+                <!-- end col -->
+              </div>
+              <!-- end row -->
+            </div>
+            <!-- ========== title-wrapper end ========== -->
+
+            <!-- ========== form-elements-wrapper start ========== -->
+            <div class="form-elements-wrapper">
+              <div class="row">
+                <!-- end col -->
+                <div class="col-lg-6">
+                  <!-- ======= textarea style start ======= -->
+                    <div class="card-style mb-30">
+                      <h6 class="mb-10">Data Table</h6>
+                      <!-- <p class="text-sm mb-20">
+                        For basic styling—light padding and only horizontal dividers—use
+                        the class table.
+                      </p> -->
+                      <div class="table-wrapper table-responsive">
+                        <table class="table">
+                          <% if(getcv.length > 0) { %>
+                            <tbody>
+                                <% for(let cv of getcv) { %>
+                                <tr>
+                                    <td class="min-width">
+                                        <div class="lead">
+                                            <div class="min-width">
+                                                <% if(cv.cv && cv.cv.endsWith('.pdf')) { %>
+                                                    <a href="/<%= cv.cv %>" target="_blank">CV</a>
+                                                <% } else if(cv.cv) { %>
+                                                    <img src="/<%= cv.cv %>" alt="CV Image" />
+                                                <% } else { %>
+                                                    <p>No CV provided</p>
+                                                <% } %>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="min-width">
+                                        <p><a href="#0"><%= cv.name %></a></p>
+                                    </td>
+                                    <td class="min-width">
+                                        <p><%= cv.experience %></p>
+                                    </td>
+                                    <td class="min-width">
+                                        <p><%= cv.phone %></p>
+                                    </td>
+                                </tr>
+                                <% } %>
+                            </tbody>
+                        <% } else { %>
+                            <tbody>
+                                <tr>
+                                    <td colspan="4">No Data Found</td>
+                                </tr>
+                            </tbody>
+                        <% } %>
+                        
+                        
+                        </table>
+                        <!-- end table -->
+                      </div>
+                    </div>
+                  <!-- ======= textarea style end ======= -->
+                </div>
+                <!-- end col -->
+              </div>
+              <!-- end row -->
+            </div>
+            <!-- ========== form-elements-wrapper end ========== -->
+          </div>
+          <!-- end container -->
+        </section>
+        <!-- ========== tab components end ========== -->
+        <%- include ('common/footer')-%>
+    </main>
+    <!-- ======== main-wrapper end =========== -->
+    <%- include ('common/foot')-%>

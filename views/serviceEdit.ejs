@@ -1,0 +1,80 @@
+<%- include ('common/head')-%> <%- include ('common/sidebar')-%>
+    <!-- ======== main-wrapper start =========== -->
+    <main class="main-wrapper">
+      <%- include ('common/navbar')-%>
+
+        <!-- ========== tab components start ========== -->
+        <section class="tab-components">
+          <div class="container-fluid">
+            <!-- ========== title-wrapper start ========== -->
+            <div class="title-wrapper pt-30">
+              <div class="row align-items-center">
+                <div class="col-md-6">
+                  <div class="title">
+                    <h2>Service Edit</h2>
+                  </div>
+                </div>
+                <!-- end col -->
+                <!-- <div class="col-md-6">
+            <div class="breadcrumb-wrapper">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item">
+                    <a href="#0">Dashboard</a>
+                  </li>
+                  <li class="breadcrumb-item"><a href="#0">Forms</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                    Form Elements
+                  </li>
+                </ol>
+              </nav>
+            </div>
+          </div> -->
+                <!-- end col -->
+              </div>
+              <!-- end row -->
+            </div>
+            <!-- ========== title-wrapper end ========== -->
+
+
+
+
+
+<div class="form-elements-wrapper">
+    <div class="row">
+      <div class="col-lg-6">
+        <!-- input style start -->
+
+        <div class="card-style mb-30">
+          <h6 class="mb-25">Input Fields</h6>
+          <form method="post" action="/admin/service-update">
+            <input type="hidden" name="serviceId" value="<%=serED._id%>">
+            <div class="input-style-1">
+              <!-- <label>Service Title</label> -->
+              <input type="text" name="title" placeholder="Service Title" value="<%=serED.title%>" />
+            </div>
+            <!-- end input -->
+            <div class="input-style-3">
+              <input type="text" name="service_desc" placeholder="Description" rows="5" value="<%=serED.service_desc%>"></input>
+              <span class="icon"><i class="lni lni-text-format"></i></span>
+            </div>
+            <div class="input-style-2">
+              <input type="file" name="image" placeholder="Icon" value="<%=serED.image%>" />
+              <span class="icon"> <i class="lni lni-photo"></i> </span>
+            </div>
+            <!-- end input -->
+            <input class="main-btn active-btn rounded-full btn-hover" value="Submit" type="submit" />
+          </form>
+        </div>
+
+        <!-- end card -->
+        <!-- ======= input style end ======= -->
+      </div>
+
+
+
+       <!-- ========== tab components end ========== -->
+       <%- include ('common/footer')-%>
+    </main>
+    <!-- ======== main-wrapper end =========== -->
+    <%- include ('common/foot')-%>

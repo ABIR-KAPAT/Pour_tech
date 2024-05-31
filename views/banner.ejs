@@ -1,0 +1,145 @@
+<%- include ('common/head')-%> <%- include ('common/sidebar')-%>
+    <!-- ======== main-wrapper start =========== -->
+    <main class="main-wrapper">
+      <%- include ('common/navbar')-%>
+
+        <!-- ========== tab components start ========== -->
+        <section class="tab-components">
+          <div class="container-fluid">
+            <!-- ========== title-wrapper start ========== -->
+            <div class="title-wrapper pt-30">
+              <div class="row align-items-center">
+                <div class="col-md-6">
+                  <div class="title">
+                    <h2>Banner Elements</h2>
+                  </div>
+                </div>
+                <!-- end col -->
+                <!-- <div class="col-md-6">
+            <div class="breadcrumb-wrapper">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item">
+                    <a href="#0">Dashboard</a>
+                  </li>
+                  <li class="breadcrumb-item"><a href="#0">Forms</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                    Form Elements
+                  </li>
+                </ol>
+              </nav>
+            </div>
+          </div> -->
+                <!-- end col -->
+              </div>
+              <!-- end row -->
+            </div>
+            <!-- ========== title-wrapper end ========== -->
+
+            <!-- ========== form-elements-wrapper start ========== -->
+            <div class="form-elements-wrapper">
+              <div class="row">
+                <div class="col-lg-6">
+                  <!-- input style start -->
+
+                  <div class="card-style mb-30">
+                    <h6 class="mb-25">Input Fields</h6>
+                    <form action="/admin/addBanner" method="post" enctype="multipart/form-data" >
+                      <div class="input-style-1">
+                        <label>Banner Title</label>
+                        <input type="text" name="title" placeholder="Banner Title" />
+                      </div>
+                      <!-- end input -->
+                      <div class="input-style-3">
+                        <input type="text" name="banner_desc" placeholder="Description" rows="5"></input>
+                        <span class="icon"><i class="lni lni-text-format"></i></span>
+                      </div>
+                      <!-- <div class="input-style-2">
+                        <input type="file" name="image" placeholder="Banner Image" />
+                        <span class="icon"> <i class="lni lni-photo"></i> </span>
+                      </div> -->
+                      <!-- end input -->
+                      <input class="main-btn active-btn rounded-full btn-hover" value="Submit" type="submit" />
+                    </form>
+                  </div>
+
+                  <!-- end card -->
+                  <!-- ======= input style end ======= -->
+                </div>
+                <!-- end col -->
+                <div class="col-lg-6">
+                  <!-- ======= textarea style start ======= -->
+                    <div class="card-style mb-30">
+                      <h6 class="mb-10">Data Table</h6>
+                      <!-- <p class="text-sm mb-20">
+                        For basic styling—light padding and only horizontal dividers—use
+                        the class table.
+                      </p> -->
+                      <div class="table-wrapper table-responsive">
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <th class="lead-img">
+                                <h6>Image</h6>
+                              </th>
+                              <th class="lead-title">
+                                <h6>Title</h6>
+                              </th>
+                              <th class="lead-description">
+                                <h6>Description</h6>
+                              </th>
+                              <th>
+                                <h6>Action</h6>
+                              </th>
+                            </tr>
+                            <!-- end table row-->
+                          </thead>
+
+                          <% if(banner.length>0) {%>
+                          <tbody>
+                            <% for(let ban of banner) {%>
+                            <tr>
+                              <td class="min-width">
+                                <div class="lead">
+                                  <div class="lead-image">
+                                    <img src="<%= ban.banner_image%>" alt="" />
+                                  </div>
+                                </div>
+                              </td>
+                              <td class="min-width">
+                                <p><a href="#0"><%= ban.title%></a></p>
+                              </td>
+                              <td class="min-width">
+                                <p><%= ban.banner_desc%></p>
+                              </td>
+                              <td>
+                                <div class="action">
+                                  <a href="/admin/bannerdelete/<%=ban._id%>" class="text-danger">
+                                    <i class="lni lni-trash-can"></i>
+                                  </a>
+                                </div>
+                              </td>
+                            </tr>
+                            <!-- end table row -->
+                          </tbody>
+                          <%}} else {%> No Data Found
+                            <% } %>
+                        </table>
+                        <!-- end table -->
+                      </div>
+                    </div>
+                  <!-- ======= textarea style end ======= -->
+                </div>
+                <!-- end col -->
+              </div>
+              <!-- end row -->
+            </div>
+            <!-- ========== form-elements-wrapper end ========== -->
+          </div>
+          <!-- end container -->
+        </section>
+        <!-- ========== tab components end ========== -->
+        <%- include ('common/footer')-%>
+    </main>
+    <!-- ======== main-wrapper end =========== -->
+    <%- include ('common/foot')-%>
