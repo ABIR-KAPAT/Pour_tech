@@ -167,6 +167,7 @@ const getCvApi = (req, res) => {
         name: req.body.name,
         email: req.body.email,
         phone: req.body.phone,
+        job_role: req.body.job_role,
         address: req.body.address,
         zip: req.body.zip,
         experience: req.body.experience,

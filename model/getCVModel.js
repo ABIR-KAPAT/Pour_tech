@@ -15,6 +15,11 @@ const getCVSchema = new Schema({
     required: true,
   
   },
+  job_role: {
+    type: String,
+    required: true,
+  
+  },
   address: {
     type: String,
     required: true,
