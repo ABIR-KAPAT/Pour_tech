@@ -36,7 +36,7 @@ const getCVSchema = new Schema({
   },
   cv: {
     type: String,
-    required: true
+    
   }
 }, {
   timestamps: true
